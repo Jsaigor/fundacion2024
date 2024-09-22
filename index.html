@@ -19,25 +19,30 @@
           background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente para distinguir mejor */
           padding: 10px; /* Espacio alrededor del texto */
         }
-      </style>
+
+        /* Contenedor de los botones con flexbox para distribución */
+        .btn-group {
+          display: flex;
+          flex-wrap: wrap; /* Para que los botones salten de línea en pantallas pequeñas */
+        }
+        .btn-group a, .btn-group .btn-group {
+          flex: 1 1 auto; /* Ajusta el tamaño de los botones automáticamente */
+          margin: 5px; /* Añade un margen entre los botones */
+        }
+
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 768px) {
+          .btn-group {
+            flex-direction: column; /* Los botones se alinearán verticalmente en pantallas pequeñas */
+          }
+        }
+    </style>
   </head>
   <body class="container" >
     <div class="alert alert-primary text-center fst-italic" role="alert" style="background: #00a9e0; color: floralwhite;">
         <img src="Icon_Mov.png" class="float-start me-3" alt="" style="height: 70px;">
         <h1>Curso de Fullstack Fundación 2024</h1>
     </div>  
-    <!--<div class="alert alert-secondary text-center fst-italic" role="alert">
-        <h2>Curso de Fullstack Fundacion 2024</h2>
-      </div>
-      <div class="alert alert-success text-center fst-italic" role="alert">
-        <h3>Curso de Fullstack Fundacion 2024</h3>>
-      </div>
-      <div class="alert alert-danger text-center fst-italic" role="alert">
-        <h4>Curso de Fullstack Fundacion 2024</h4>>
-      </div>
-      <div class="alert alert-warning text-center fst-italic" role="alert">
-        <h5>Curso de Fullstack Fundacion 2024</h5>>
-      </div>-->
       <!-- Botones -->
       <div class="btn-group" role="group" aria-label="Clases">
         <a href="https://drive.google.com/drive/folders/1VuSgiPifILlbKLDcZP-Nbbxjzpq33Vox" class="btn btn-primary" role="button" target="_blank">Clase 1</a>
@@ -76,64 +81,19 @@
               <li class="nav-item">
                 <a class="nav-link" href="mailto:guillermo.alfaro.gma@gmail.com">Correo al Profe</a>
               </li>
-              <!-- <li class="nav-item dropdown"> 
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li> -->
               <li class="nav-item">
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
               </li>
             </ul>
-            <!-- <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" role="search" onsubmit="searchPDF(event)">
+              <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
-
-            <!--<div class="container mt-5"> -->
-                <form class="d-flex" role="search" onsubmit="searchPDF(event)">
-                    <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <div id="results" class="mt-3">
-                </div>
-            <!--</div>   --> 
-
+            </form>
+            <div id="results" class="mt-3"></div>
           </div>
         </div>
       </nav>
-      <!-- Spinners 
-      <div class="spinner-grow text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-      <div class="spinner-grow text-secondary" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-      <div class="spinner-grow text-success" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-      <div class="spinner-grow text-danger" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-      <div class="spinner-grow text-warning" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-      <div class="spinner-grow text-info" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-      <div class="spinner-grow text-light" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-      <div class="spinner-grow text-dark" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div> -->
-    <div id="carouselExampleCaptions" class="carousel slide">
+      <div id="carouselExampleCaptions" class="carousel slide">
         <!-- Indicators -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -200,9 +160,7 @@
               <!-- <p>PHP</p> -->
             </div>
           </div>
-
-        </div>
-  
+        </div>  
         <!-- Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -214,37 +172,36 @@
         </button>
       </div>
     <a href="https://wa.me/5491139440923" target="_blank" style="background-color: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" style="height: 20px; vertical-align: middle; margin-right: 5px;">
-        Envía un msj al grupo de alumnos
-        <!-- <img src="QR.png" alt="QR"> -->
-    </a> 
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" style="height: 20px; vertical-align: middle; margin-right: 5px;">
+      Envía un msj al grupo de alumnos
+      <!-- <img src="QR.png" alt="QR"> -->  
+    </a>
       <!-- Bootstrap JS -->
       <script src="js/bootstrap.bundle.min.js"></script>
-
-      <!-- Script par busqueda -->
-      <script>function searchPDF(event) {
-        event.preventDefault(); // Evita el envío normal del formulario
-
-        const query = document.getElementById('searchInput').value;
-        fetch(`/search?q=${query}`)
+      <!-- Script de búsqueda -->
+      <script>
+        function searchPDF(event) {
+          event.preventDefault();
+          const query = document.getElementById('searchInput').value;
+          fetch(`/search?q=${query}`)
             .then(response => response.json())
             .then(data => {
-                const resultsDiv = document.getElementById('results');
-                resultsDiv.innerHTML = ''; // Limpia resultados previos
-
-                if (data.length === 0) {
-                    resultsDiv.innerHTML = '<p>No files found.</p>';
-                } else {
-                    data.forEach(file => {
-                        const link = document.createElement('a');
-                        link.href = `/download/${file}`;
-                        link.textContent = file;
-                        link.className = 'd-block';
-                        resultsDiv.appendChild(link);
-                    });
-                }
+              const resultsDiv = document.getElementById('results');
+              resultsDiv.innerHTML = '';
+              if (data.length === 0) {
+                resultsDiv.innerHTML = '<p>No files found.</p>';
+              } else {
+                data.forEach(file => {
+                  const link = document.createElement('a');
+                  link.href = `/download/${file}`;
+                  link.textContent = file;
+                  link.className = 'd-block';
+                  resultsDiv.appendChild(link);
+                });
+              }
             })
             .catch(error => console.error('Error:', error));
-    }</script>
+        }
+      </script>
    </body>
 </html>
