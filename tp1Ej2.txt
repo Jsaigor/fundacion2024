@@ -1,0 +1,33 @@
+<?php 
+include "unnro.php";
+
+$inicio=1;
+$fin=1000;
+
+$primos=[];                                 //declaracion de los 3 arrary a utilizar para el resultado
+$primosPares=[];
+$primosImpares=[];
+
+
+for ($k=$inicio;$k<=$fin;$k++){
+    $resultado=verificarNumero($k);
+
+$primo=$resultado[0];                       //el elemento del array 0 guardo si es primo o no
+$paridad=$resultado[1];                     //el elemento del array 1 guardo la paridad
+
+if ($primo===true) {                        //Si es primo,
+    $primos[]=$k;                           //agrego el número a la lista de "primos"
+}
+if ($primo===true and $paridad=="par"){     //Si es primo y es par    
+    $primosPares[]=$k;                      //agrego al arreglo de "primoPares"
+}elseif($primo===true and $paridad=="impar") {  //Si no cumple es impar y lo cuento en el arreglo de "primosImpares"
+    $primosImpares[]=$k;
+}
+}
+// Imprimimos los resultados
+echo "<h2>Entre $inicio y $fin hay ".count($primos). " numeros primos. Separados por PAR o IMPAR: <br></h2>";
+echo "<h3>Cantidad total de números primos encontrados: ".count($primos)."<br></h3>";
+echo "<h3>Cantidad de números primos pares: ".count($primosPares)."<br></h3>";
+echo "<h3>Cantidad de números primos impares: ".count($primosImpares)."<br></h3>";
+
+?>
