@@ -1,0 +1,18 @@
+<?php 
+function verificarNumero($n){
+if (!is_int($n) or $n <= 1){           //si el nro no es entero o es 1 o menor a 1 tengo que retornar [falso, falso]
+    return[false,false];
+}
+elseif ($n){
+    $primo=true;                //asumo que es primo hasta verificar que no tenga otro divisor <= a la raiz cuadrada del numero
+for ($i=2;$i<=sqrt($n);$i++){   //el for para recorrer los posibles divisores (arranco en 2 pq 0 y 1 no son primo por definición)
+    if ($n%$i==0){              //si el resto de el posible divisor de $n es 0 ya no es primo
+    $primo=false;               //cambio el flag de la verificacion
+    break;                      //salgo del for, verificado que tiene mas divisores que 1 o el mismo número
+}
+}
+$paridad=($n%2==0) ? "par":"impar"; //verificacion de paridad, si divido por 2 y no hay resto es par
+return[$primo,$paridad];            //retorno los resultados del número si es primo y si es par
+}
+}
+?>

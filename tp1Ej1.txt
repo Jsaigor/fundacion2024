@@ -1,0 +1,20 @@
+<?php
+include "unnro.php";
+
+$numero =17;
+
+$resultado = verificarNumero($numero);      //llamado a la funcion verificarNumero pasandole el número (recibo en un array)
+$primo=$resultado[0];                       //el elemento 0 contiene si es primo o no
+$paridad=$resultado[1];                     //el elemento 1 contiene la paridad
+
+if ($primo===true and $paridad){            //si es primo y existe paridad saco el mensaje por pantalla
+    echo "<h3>$numero Es primo y es $paridad </h3>";
+}
+elseif ($primo===false and $paridad)       //si no es primo y existe paridad saco el mensaje por pantalla
+{
+    echo "<h3>$numero No es primo y es $paridad</h3>";  
+} 
+else {
+    echo "<h3>el $numero es menor que 1 o es igual a 1</h3>";  //para el caso que el número sea = 1 o menor o no entero
+}
+?>
