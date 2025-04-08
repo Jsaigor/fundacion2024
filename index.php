@@ -41,17 +41,20 @@
         }
     </style>
   </head>
-  <body class="container" >
+  <body class="fluid-container" >
     <div class="alert alert-primary text-center fst-italic" role="alert" style="background: #00a9e0; color: floralwhite;">
         <img src="Icon_Mov.png" class="float-start me-3" alt="" style="height: 70px;">
         <h1>Curso de FullStack Fundación 2024</h1>
     </div>  
       <!-- Botones -->
-      <?php clases(); ?>
       <!-- Menu de navegacion -->
-      <?php menu(); ?>
       <!-- carrusel -->
-      <?php carrusel(); ?>
+      <?php
+      clases();
+      menu();
+      carrusel();
+
+      ?>
     <a href="https://wa.me/5491139440923" target="_blank" style="background-color: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" style="height: 20px; vertical-align: middle; margin-right: 5px;">
       Envía un msj al grupo de alumnos
